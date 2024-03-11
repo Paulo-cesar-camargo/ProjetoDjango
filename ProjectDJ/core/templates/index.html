@@ -1,0 +1,49 @@
+
+{%load static%}
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>index</title>
+        <link rel="stylesheet" href="{% static 'css/estilo.css'%}">
+
+    </head>
+
+    <body>
+    <header class="cab">
+
+        <h1>CADASTRO DE PRODUTOS </h1>
+
+    </header>
+
+    <section class="container">
+    <h2>{{ noticias }}</h2>
+    <h1>{{ BoasVindas }}</h1>
+    <a href="contato">Contatos</a>
+        <h2>{{ tabela }}</h2>
+        <table border="4">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produto in produtos %}
+                <tr>
+                    <td>{{ produto.nome }}</td>
+                    <td>{{ produto.preco }}</td>
+                    <td>{{ produto.estoque }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+    <hr>
+    <section class="imagens">
+        <img src="{% static 'imeges/leao.jpeg'%}"/>
+
+    </section>
+    </body>
+    </html>

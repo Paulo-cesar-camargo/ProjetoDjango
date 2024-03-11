@@ -1,0 +1,45 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/contato.css'%}">
+    <title>Cliente</title>
+</head>
+<body>
+<hr>
+<h1>CONTATO</h1>
+<section class="container">
+<h1>Lista de Contatos</h1>
+    <a href="/"><h3>Produtos</h3></a>
+    <table border="4">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Idade</th>
+                <th>Sexo</th>
+                <th>Endereço</th>
+                <th>Numero</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.sobrenome }}</td>
+                <td>{{ cliente.idade }}</td>
+                <td>{{ cliente.sexo }}</td>
+                <td>{{ cliente.endereco }}</td>
+                <td>{{ cliente.numero }}</td>
+                <td>{{ cliente.estado }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </section>
+<hr>
+
+</body>
+</html>
